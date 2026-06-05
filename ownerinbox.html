@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="ownerinbox.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+            <label for="sidebar-toggle" class="d-lg-none cursor-pointer">
+                <i class="bi bi-x-lg fs-4"></i>
+            </label>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="ownerdash1.html" class="menu-item"><i class="bi bi-house-door-fill"></i> Owner Dashboard</a>
+            </li>
+            <li><a href="ownerstaff.html" class="menu-item"><i class="bi bi-person-workspace"></i> Staff Management</a>
+            </li>
+            <li><a href="ownerjob.html" class="menu-item"><i class="bi bi-briefcase-fill"></i> Jobs</a></li>
+            <li><a href="ownerbusiness.html" class="menu-item"><i class="bi bi-graph-up-arrow"></i> Business
+                    Analytics</a></li>
+            <li><a href="ownerinventory.html" class="menu-item"><i class="bi bi-boxes"></i> Inventory</a></li>
+            <li><a href="ownerinbox.html" class="menu-item active"><i class="bi bi-envelope-paper-fill"></i> Inbox</a>
+            </li>
+            <li><a href="ownerpass.html" class="menu-item"><i class="bi bi-shield-lock-fill"></i> Change Password</a>
+            </li>
+        </ul>
+
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center text-white shadow-sm"
+                    style="width: 44px; height: 44px; background: linear-gradient(135deg, #FF99CC, #977DFF) !important; flex-shrink: 0;">
+                    <i class="bi bi-person-fill fs-5"></i>
+                </div>
+                <div style="overflow: hidden;">
+                    <p class="mb-0 fw-bold text-dark"
+                        style="font-size: 0.95rem; white-space: nowrap; text-overflow: ellipsis;">The General Store</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.8rem; white-space: nowrap; text-overflow: ellipsis;">
+                        taha@generalstore.com</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <label for="sidebar-toggle" class="btn d-lg-none me-3 p-0 border-0">
+                <i class="bi bi-list fs-2"></i>
+            </label>
+            <span class="text-muted fw-semibold d-none d-sm-inline">Merchant Hub / Inbox</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+
+            <div class="vr mx-1 text-muted opacity-25 d-none d-sm-block"></div>
+            <div class="d-flex align-items-center gap-3">
+                <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                    title="Toggle Dark Mode">
+                    <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+                </button>
+                <a href="mainlogin.html"><button id="logoutBtn"
+                        class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                        Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                    </button></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <main class="content-area">
+
+            <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+                <div>
+                    <h2 class="fw-800 mb-1">Message Center</h2>
+                    <p class="text-muted mb-0">Communicate with your staff and vendors.</p>
+                </div>
+            </div>
+
+            <!-- Inbox Container -->
+            <div class="inbox-container">
+                <!-- Sidebar List -->
+                <div class="inbox-list">
+                    <div class="inbox-list-header">
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-0"><i
+                                    class="bi bi-search text-muted"></i></span>
+                            <input type="text" class="form-control bg-light border-0" placeholder="Search chats...">
+                        </div>
+                    </div>
+                    <div class="message-preview-list">
+                        <!-- Active Item -->
+                        <div class="message-item active">
+                            <div class="unread-dot"></div>
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h6 class="mb-0 fw-bold">George Bennett</h6>
+                                <span class="small text-muted">10:42 AM</span>
+                            </div>
+                            <p class="small text-muted mb-0 text-truncate">I've finished the inventory count for the
+                                week, please check...</p>
+                        </div>
+                        <!-- Unread Item -->
+                        <div class="message-item">
+                            <div class="unread-dot"></div>
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h6 class="mb-0 fw-bold">Margaret Thompson</h6>
+                                <span class="small text-muted">Yesterday</span>
+                            </div>
+                            <p class="small text-muted mb-0 text-truncate">The supplier mentioned a delay in the milk
+                                shipment.</p>
+                        </div>
+                        <!-- Read Item -->
+                        <div class="message-item">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <h6 class="mb-0 fw-bold">Harold Miller</h6>
+                                <span class="small text-muted">Monday</span>
+                            </div>
+                            <p class="small text-muted mb-0 text-truncate">Got it. I'll see you at the morning briefing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat View -->
+                <div class="inbox-view">
+                    <div class="view-header">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="avatar-circle" style="background: #eef2ff; width: 45px; height: 45px;align-content: center;text-align: center;">G</div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">George Bennett</h6>
+                                <span class="small text-success fw-semibold">Online</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-bubbles">
+                        <div class="bubble bubble-received">
+                            Hi Arthur, I've finished the inventory count for the week. There's a slight discrepancy in
+                            the grain stock.
+                        </div>
+                        <div class="bubble bubble-sent">
+                            Thanks George. How big is the difference?
+                        </div>
+                        <div class="bubble bubble-received">
+                            About 5 units short. I suspect it's from the last local delivery. I've attached the log for
+                            you to review.
+                        </div>
+                        <div class="text-center my-2">
+                            <span class="badge bg-light text-muted fw-normal py-2 px-3">Today</span>
+                        </div>
+                        <div class="bubble bubble-sent">
+                            I'll take a look at the logs this afternoon. Good job catching that.
+                        </div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <div class="input-group">
+                            <button class="btn btn-light border-end-0 border" type="button"><i
+                                    class="bi bi-paperclip"></i></button>
+                            <input type="text" class="form-control border-start-0 border-end-0 py-2"
+                                placeholder="Write your message here...">
+                            <button class="btn btn-primary px-4 border-start-0" style="background: var(--color-blue);"
+                                type="button">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="ownerinbox.js"></script>
+</body>
+
+</html>

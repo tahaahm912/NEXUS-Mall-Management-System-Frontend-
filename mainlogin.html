@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="mainlogin.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg custom-header sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">NexusMMS</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
+                </ul>
+                <div class="d-flex align-items-center justify-content-end">
+                    <button id="theme-toggle" class="btn border-0">
+                        <i data-lucide="moon" id="theme-icon"></i>
+                    </button>
+                </div>
+                <div style="width: 20px;" class="d-none d-lg-block"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Selection Grid -->
+    <main class="container my-5 py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold" style="color: var(--text-main);">Welcome Back</h1>
+            <p class="lead" style="color: var(--text-muted);">Choose your portal to continue managing your experience
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Admin -->
+            <div class="col-md-6 col-lg-3">
+                <a href="adminlog.html" class="login-card d-block text-center">
+                    <div class="icon-circle">🛡️</div>
+                    <h3>Admin</h3>
+                    <p class="text-muted small">System configuration and security management.</p>
+                </a>
+            </div>
+
+            <!-- Owner -->
+            <div class="col-md-6 col-lg-3">
+                <a href="ownerlog.html" class="login-card d-block text-center">
+                    <div class="icon-circle">💼</div>
+                    <h3>Owner</h3>
+                    <p class="text-muted small">Financial reports and business tracking.</p>
+                </a>
+            </div>
+
+            <!-- Employee -->
+            <div class="col-md-6 col-lg-3">
+                <a href="employeelog.html" class="login-card d-block text-center">
+                    <div class="icon-circle">🛠️</div>
+                    <h3>Employee</h3>
+                    <p class="text-muted small">Daily operations and request management.</p>
+                </a>
+            </div>
+
+            <!-- Customer -->
+            <div class="col-md-6 col-lg-3">
+                <a href="customerlog.html" class="login-card d-block text-center">
+                    <div class="icon-circle">🛍️</div>
+                    <h3>Customer</h3>
+                    <p class="text-muted small">Member rewards and personal profile.</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container px-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                </div>
+                <div class="col-xs-6 col-md-3 ms-auto px-4">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="">Contribute</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-8 col-sm-6">
+                    <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                </div>
+                <div class="col-md-4 col-sm-6 text-end px-4">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="mainlogin.js">
+    </script>
+</body>
+
+</html>

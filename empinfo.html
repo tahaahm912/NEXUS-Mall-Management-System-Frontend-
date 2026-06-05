@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Records | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="empinfo.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <input type="checkbox" id="sidebar-toggle">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+            <label for="sidebar-toggle" class="d-lg-none"><i class="bi bi-x-lg fs-4"></i></label>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="empdash1.html" class="menu-item"><i class="bi bi-speedometer2"></i> Employee Dashboard</a></li>
+            <li><a href="empsales.html" class="menu-item"><i class="bi bi-graph-up-arrow"></i> Sales and Service</a>
+            </li>
+            <li><a href="empinfo.html" class="menu-item active"><i class="bi bi-person-badge"></i> Personal Records</a>
+            </li>
+            <li><a href="empinbox.html" class="menu-item"><i class="bi bi-envelope-paper"></i> Inbox</a></li>
+            <li><a href="emppass.html" class="menu-item"><i class="bi bi-shield-lock"></i> Change Password</a></li>
+        </ul>
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center text-white"
+                    style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--color-purple), var(--color-blue)) !important;">
+                    <i class="bi bi-person-workspace"></i>
+                </div>
+                <div>
+                    <p class="mb-0 fw-bold small text-main">Uzair</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.7rem;">Senior Associate</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <label for="sidebar-toggle" class="btn d-lg-none me-3 p-0 text-main"><i class="bi bi-list fs-2"></i></label>
+            <span class="text-muted fw-semibold">Personal Records & Employment</span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                title="Toggle Dark Mode">
+                <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+            </button>
+            <a href="mainlogin.html">
+                <button id="logoutBtn" class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                    Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <!-- Content Area -->
+    <div class="main-wrapper">
+        <main class="content-area">
+            <div class="row g-4">
+                <!-- Personal Info -->
+                <div class="col-lg-4">
+                    <div class="record-card">
+                        <div class="d-flex justify-content-between align-items-start mb-4">
+                            <h5 class="fw-800 mb-0">Personal Info</h5>
+                            <button class="btn btn-sm btn-light border text-main"><i class="bi bi-pencil-square"></i>
+                                Edit</button>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="position-relative d-inline-block">
+                                <img src="https://ui-avatars.com/api/?name=Uzair&background=977DFF&color=fff&size=100"
+                                    class="rounded-circle shadow-sm mb-2" alt="Uzair Avatar">
+                                <span
+                                    class="position-absolute bottom-0 end-0 bg-success border border-white rounded-circle p-2"></span>
+                            </div>
+                            <h6 class="mb-0 fw-bold">Uzair</h6>
+                            <p class="text-muted small">Employee ID: #EMP-88219</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="info-label">Full Name</div>
+                                <div class="info-value">Uzair Umer</div>
+                                <div class="info-label">Email Address</div>
+                                <div class="info-value">uzair.umer@nexusmms.com</div>
+                                <div class="info-label">Contact Number</div>
+                                <div class="info-value">+1 (555) 012-3456</div>
+                                <div class="info-label">Department</div>
+                                <div class="info-value">Sales & Premium Services</div>
+                                <div class="info-label">Joined Date</div>
+                                <div class="info-value">March 15, 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance & Payment -->
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="record-card">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h5 class="fw-800 mb-0">Recent Attendance</h5>
+                                    <select class="form-select form-select-sm w-auto">
+                                        <option>Current Month</option>
+                                        <option>Last Month</option>
+                                    </select>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th class="border-0 small">DATE</th>
+                                                <th class="border-0 small">CHECK IN</th>
+                                                <th class="border-0 small">CHECK OUT</th>
+                                                <th class="border-0 small">STATUS</th>
+                                                <th class="border-0 small">TOTAL HRS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td>Dec 21, 2025</td>
+                                                <td>08:55 AM</td>
+                                                <td>--:--</td>
+                                                <td><span class="attendance-indicator indicator-present"></span>Present
+                                                </td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dec 20, 2025</td>
+                                                <td>09:05 AM</td>
+                                                <td>06:12 PM</td>
+                                                <td><span class="attendance-indicator indicator-late"></span>Late (5m)
+                                                </td>
+                                                <td>9h 7m</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="record-card">
+                                <h5 class="fw-800 mb-4">Payment History & Status</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="p-3 border rounded-4">
+                                            <div class="info-label">Current Period</div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-bold h5 mb-0 text-main">$4,250.00</div>
+                                            </div>
+                                            <p class="mb-0 text-muted mt-2 small">Pay Date: Dec 31, 2025</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="p-3 border rounded-4 bg-light">
+                                            <div class="info-label">Last Paid</div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-bold h5 mb-0 text-main">$4,120.00</div>
+                                            </div>
+                                            <p class="mb-0 text-muted mt-2 small">Date: Nov 30, 2025</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-xl-4">
+                                        <div
+                                            class="p-3 border rounded-4 d-flex align-items-center justify-content-between">
+                                            <div>
+                                                <div class="fw-bold text-main">Tax Forms</div>
+                                                <p class="mb-0 text-muted small">W2 - 2024 Available</p>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline-primary"><i
+                                                    class="bi bi-download"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="empinfo.js">
+
+    </script>
+</body>
+
+</html>

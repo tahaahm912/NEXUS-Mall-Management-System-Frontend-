@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shops Management | NexusMMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="shopmanagement.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="admindash1.html" class="menu-item"><i class="bi bi-grid-fill"></i> Admin Dashboard</a></li>
+            <li><a href="adminmanagement.html" class="menu-item"><i class="bi bi-people-fill"></i> Admin Management</a>
+            </li>
+            <li><a href="shopmanagement.html" class="menu-item active"><i class="bi bi-shop"></i> Shops</a></li>
+            <li><a href="adminrent.html" class="menu-item"><i class="bi bi-cash-stack"></i> Rent and Revenue</a></li>
+            <li><a href="adminevent.html" class="menu-item"><i class="bi bi-calendar-event"></i> Events</a></li>
+            <li><a href="adminnoti.html" class="menu-item"><i class="bi bi-bell-fill"></i> Notifications</a></li>
+        </ul>
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white"
+                    style="width: 40px; height: 40px; background: linear-gradient(135deg, #6366f1, #a855f7) !important;">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                <div>
+                    <p class="mb-0 fw-bold text-dark" style="font-size: 0.9rem;">Master Admin</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.75rem;">admin@nexusmms.com</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <button class="btn d-lg-none me-2"><i class="bi bi-list fs-3"></i></button>
+            <span class="text-muted fw-semibold">Inventory / Shops Management</span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                title="Toggle Dark Mode">
+                <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+            </button>
+            <a href="mainlogin.html"><button id="logoutBtn"
+                    class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                    Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                </button></a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <main class="content-area">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <h2 class="fw-800 mb-1">Shops Inventory</h2>
+                    <p class="text-muted mb-0">Persistent Data Management (Local Storage).</p>
+                </div>
+                <button class="btn btn-primary px-4 rounded-3 shadow-sm" data-bs-toggle="modal"
+                    data-bs-target="#addShopModal">
+                    <i class="bi bi-plus-lg"></i> Add New Shop
+                </button>
+            </div>
+
+            <ul class="nav nav-pills nav-pills-custom gap-2 mb-4" id="shopTabs">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#rent">For
+                        Rent</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill"
+                        data-bs-target="#enlistment">Enlistment Requests</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#rented">Currently
+                        Rented</button></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="rent">
+                    <div class="row g-4" id="rent-container"></div>
+                </div>
+
+                <div class="tab-pane fade" id="enlistment">
+                    <div class="shop-card overflow-hidden">
+                        <div class="table-responsive">
+                            <table class="table shop-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Applicant</th>
+                                        <th>Type</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th class="text-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="enlistment-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="rented">
+                    <div class="shop-card overflow-hidden">
+                        <div class="table-responsive">
+                            <table class="table shop-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Shop ID</th>
+                                        <th>Tenant</th>
+                                        <th>Lease End</th>
+                                        <th>Rent</th>
+                                        <th class="text-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rented-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="addShopModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4">
+                <div class="modal-header p-4 pb-0 border-0">
+                    <h5 class="fw-800">New Shop Listing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="addShopForm">
+                        <div class="row g-3">
+                            <div class="col-md-6"><label class="form-label small fw-bold">Shop ID</label><input
+                                    type="text" class="form-control bg-light border-0" required placeholder="A-101">
+                            </div>
+                            <div class="col-md-6"><label class="form-label small fw-bold">Floor</label><select
+                                    class="form-select bg-light border-0">
+                                    <option>Floor 1</option>
+                                    <option>Floor 2</option>
+                                    <option>Basement</option>
+                                </select></div>
+                            <div class="col-12"><label class="form-label small fw-bold">Size (Sq. Ft)</label><input
+                                    type="number" class="form-control bg-light border-0" min="1" required></div>
+                            <div class="col-12"><label class="form-label small fw-bold">Rent ($)</label><input
+                                    type="number" class="form-control bg-light border-0" min="0" required></div>
+                            <div class="col-12 mt-4"><button type="submit"
+                                    class="btn btn-primary w-100 py-2">Publish</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="approvalModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg">
+                <div class="modal-header p-4 border-0 text-white"
+                    style="background: linear-gradient(135deg, #6366f1, #a855f7) !important;">
+                    <h5 class="fw-bold mb-0"><i class="bi bi-check-circle-fill me-2"></i> Approve Application</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted small mb-4">Finalize lease for <strong id="approvingTenantName"
+                            class="text-dark"></strong></p>
+                    <form id="approvalForm">
+                        <input type="hidden" id="approvingIndex">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-muted">ASSIGN SHOP ID</label>
+                            <input type="text" id="assignShopId" class="form-control form-control-lg bg-light border-0"
+                                placeholder="e.g. D-105" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold small text-muted">MONTHLY RENT ($)</label>
+                            <input type="number" id="assignRent" class="form-control form-control-lg bg-light border-0" min="0"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3"
+                            style="background: #6366f1; border: none;">Confirm & Move to Rented</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="shopmanagement.js">
+
+    </script>
+</body>
+
+</html>

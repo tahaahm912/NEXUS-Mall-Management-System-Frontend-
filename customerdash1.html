@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="customerdash1.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <!-- Hidden toggle for CSS-only sidebar -->
+    <input type="checkbox" id="sidebar-toggle">
+    <!-- Clickable overlay to close sidebar on mobile -->
+    <label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+            <label for="sidebar-toggle" class="d-lg-none cursor-pointer">
+                <i class="bi bi-x-lg fs-4"></i>
+            </label>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="customerdash1.html" class="menu-item active"><i class="bi bi-grid-fill"></i> Customer
+                    Dashboard</a></li>
+            <li><a href="customershopping.html" class="menu-item"><i class="bi bi-bag-fill"></i> Shopping</a></li>
+            <li><a href="customerjob.html" class="menu-item"><i class="bi bi-briefcase-fill"></i> Jobs</a></li>
+            <li><a href="customerevents.html" class="menu-item"><i class="bi bi-calendar2-heart-fill"></i> Events</a>
+            </li>
+            <li><a href="customersupport.html" class="menu-item"><i class="bi bi-headset"></i> Support</a></li>
+            <li><a href="customerpassword.html" class="menu-item"><i class="bi bi-key-fill"></i> Password</a></li>
+        </ul>
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white shadow-sm"
+                    style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--color-purple), var(--color-blue)) !important;">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+                <div>
+                    <p class="mb-0 fw-bold" style="font-size: 0.9rem; color: var(--footer-dark);">Taha Ahmed</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.75rem;">taha.ahmed@email.com</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <label for="sidebar-toggle" class="btn d-lg-none me-3 p-0 border-0">
+                <i class="bi bi-list fs-2"></i>
+            </label>
+            <span class="text-muted fw-semibold d-none d-sm-inline">Customer Dashboard</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+            <!-- Notification Icon Dropdown -->
+            <div class="dropdown">
+                <button class="btn notification-btn border-0 dropdown-toggle no-caret" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-bell fs-4"></i>
+                    <span class="notification-badge"></span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end notification-dropdown">
+                    <div class="notification-header d-flex justify-content-between align-items-center">
+                        <span>Notifications</span>
+                        <a href="#" class="text-primary x-small text-decoration-none fw-normal"
+                            style="font-size: 0.75rem;">Mark all as read</a>
+                    </div>
+                    <div class="notification-item">
+                        <div class="fw-bold small">New Event Registered!</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">You are confirmed for the Tech Expo.</div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="fw-bold small">Points Credited</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">+50 points added for your last scan.</div>
+                    </div>
+                    <div class="p-2 text-center border-top">
+                        <a href="#" class="text-primary small text-decoration-none fw-bold">View All Notifications</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="d-flex align-items-center gap-3">
+                <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                    title="Toggle Dark Mode">
+                    <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+                </button>
+                <a href="mainlogin.html"><button id="logoutBtn"
+                        class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                        Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                    </button></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+        <main class="content-area">
+
+            <!-- Welcome Section -->
+            <div class="welcome-card">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <h1 class="fw-800">Welcome back! 👋</h1>
+                        <p class="text-white mb-0">Discover new trends, track your points, and stay updated with
+                            upcoming events in Nexus Mall.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Stats Grid -->
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(0, 51, 255, 0.1); color: var(--color-blue);">
+                            <i class="bi bi-stars"></i>
+                        </div>
+                        <h6 class="text-muted mb-1">Loyalty Points</h6>
+                        <h3 class="fw-bold mb-0">1,250</h3>
+                        <small class="text-success fw-bold"><i class="bi bi-arrow-up"></i> 50 new today</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(255, 204, 242, 0.5); color: #d63384;">
+                            <i class="bi bi-calendar-event"></i>
+                        </div>
+                        <h6 class="text-muted mb-1">Registered Events</h6>
+                        <h3 class="fw-bold mb-0">2</h3>
+                        <small class="text-muted">Next: Friday, 4 PM</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(25, 135, 84, 0.1); color: #198754;">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <h6 class="text-muted mb-1">Job Applications</h6>
+                        <h3 class="fw-bold mb-0">1</h3>
+                        <small class="text-success fw-bold">Under Review</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Section -->
+            <div class="row mt-4 g-4">
+                <div class="col-lg-8">
+                    <div class="card border-0 rounded-4 shadow-sm p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="fw-bold mb-0">Recommended for You</h5>
+                            <a href="customershopping.html"><button
+                                    class="btn btn-sm btn-outline-primary rounded-pill">Explore Shop</button></a>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-4">
+                                    <div class="fw-bold mb-1">Seasonal Discount</div>
+                                    <p class="small text-muted">Up to 40% off in Fashion Avenue stores.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded-4">
+                                    <div class="fw-bold mb-1">Weekend Concert</div>
+                                    <p class="small text-muted">Live music at the Central Plaza this Saturday.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="text-center py-4 mt-3 bg-light rounded-4 border border-dashed flex-grow-1 d-flex flex-column justify-content-center overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
+                                alt="New Arrivals" class="img-fluid rounded-3 mx-auto mb-2"
+                                style="max-height: 200px; width: 90%; object-fit: cover; opacity: 0.9;">
+                            <div class="px-3">
+                                <h6 class="fw-bold mb-1">New Arrivals in Fashion Avenue</h6>
+                                <p class="x-small text-muted mb-0">Based on your recent interest in luxury brands.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0 rounded-4 shadow-sm p-4 h-100">
+                        <h5 class="fw-bold mb-4">Quick Communication</h5>
+                        <div class="d-flex gap-3 mb-3 pb-3 border-bottom">
+                            <div class="bg-primary-subtle text-primary p-2 rounded-3 h-100">
+                                <i class="bi bi-chat-left-dots"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1 fw-bold">Help Desk</h6>
+                                <p class="small text-muted mb-0">Need help? Chat with mall support now.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 mb-3 pb-3 border-bottom">
+                            <div class="bg-success-subtle text-success p-2 rounded-3 h-100">
+                                <i class="bi bi-megaphone"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1 fw-bold">New Announcements</h6>
+                                <p class="small text-muted mb-0">Mall hours extended for Holiday Season.</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-auto rounded-pill fw-bold"
+                            style="background: var(--color-blue); border: none;">
+                            Send Feedback
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            /* Hide default dropdown arrow for the notification button */
+            .no-caret::after {
+                display: none !important;
+            }
+        </style>
+        <script src="customerdash1.js"></script>
+</body>
+
+</html>

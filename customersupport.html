@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Help Desk | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="customersupport.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <input type="checkbox" id="sidebar-toggle">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+            <label for="sidebar-toggle" class="d-lg-none"><i class="bi bi-x-lg fs-4"></i></label>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="customerdash1.html" class="menu-item"><i class="bi bi-grid-fill"></i> Customer Dashboard</a>
+            </li>
+            <li><a href="customershopping.html" class="menu-item"><i class="bi bi-bag-fill"></i> Shopping</a></li>
+            <li><a href="customerjob.html" class="menu-item"><i class="bi bi-briefcase-fill"></i> Jobs</a></li>
+            <li><a href="customerevents.html" class="menu-item"><i class="bi bi-calendar2-heart-fill"></i> Events</a>
+            </li>
+            <li><a href="customersupport.html" class="menu-item active"><i class="bi bi-headset"></i> Support</a></li>
+            <li><a href="customerpassword.html" class="menu-item"><i class="bi bi-key-fill"></i> Password</a></li>
+        </ul>
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white"
+                    style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--color-purple), var(--color-blue)) !important;">
+                    <i class="bi bi-person"></i>
+                </div>
+                <div>
+                    <p class="mb-0 fw-bold small">Taha Ahmed</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.7rem;">Verified Member</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <label for="sidebar-toggle" class="btn d-lg-none me-3 p-0"><i class="bi bi-list fs-2"></i></label>
+            <span class="text-muted fw-semibold">Support Center</span>
+        </div>
+        <div class="dropdown">
+            <div class="d-flex align-items-center gap-3">
+                <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                    title="Toggle Dark Mode">
+                    <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+                </button>
+                <a href="mainlogin.html"><button id="logoutBtn"
+                        class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                        Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                    </button></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Area -->
+    <div class="main-wrapper">
+        <main class="content-area">
+
+            <div class="row g-4">
+                <!-- Left Column: Form -->
+                <div class="col-lg-8">
+                    <div class="support-card h-100">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="p-3 bg-primary-subtle rounded-3 text-primary">
+                                <i class="bi bi-pencil-square fs-3"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-800 mb-0">Register a Complaint</h3>
+                                <p class="text-muted mb-0 small">Our team usually responds within 24 hours.</p>
+                            </div>
+                        </div>
+
+                        <form id="complaintForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small">Subject</label>
+                                    <input type="text" class="form-control" placeholder="Brief summary of the issue"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small">Category</label>
+                                    <select class="form-select" required>
+                                        <option value="" selected disabled>Choose category...</option>
+                                        <option>Store Service</option>
+                                        <option>Facility/Maintenance</option>
+                                        <option>Lost & Found</option>
+                                        <option>App/Technical Issue</option>
+                                        <option>Security</option>
+                                        <option>Others</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold small">Location (Optional)</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="e.g., Level 2, Food Court, Store Name">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold small">Detailed Description</label>
+                                    <textarea class="form-control" rows="5"
+                                        placeholder="Please describe your concern in detail..." required></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="submit-btn w-100">Submit Complaint</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column: Sidebar info -->
+                <div class="col-lg-4">
+                    <!-- Recent Tickets -->
+                    <div class="support-card mb-4">
+                        <h5 class="fw-bold mb-3">Your Recent Tickets</h5>
+                        <div class="ticket-list">
+                            <div class="d-flex justify-content-between align-items-start mb-3 border-bottom pb-2">
+                                <div>
+                                    <p class="mb-0 fw-bold small">Parking Gate Malfunction</p>
+                                    <p class="text-muted" style="font-size: 0.7rem;">ID: #TKT-8842 • 2 days ago</p>
+                                </div>
+                                <span class="status-badge status-resolved">RESOLVED</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <div>
+                                    <p class="mb-0 fw-bold small">Incorrect Points Credit</p>
+                                    <p class="text-muted" style="font-size: 0.7rem;">ID: #TKT-9011 • 4 hours ago</p>
+                                </div>
+                                <span class="status-badge status-pending">IN REVIEW</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ / Quick Help -->
+                    <div class="support-card">
+                        <h5 class="fw-bold mb-3">Quick Help</h5>
+                        <div class="faq-item">
+                            <a href="#" class="text-decoration-none text-dark small d-flex justify-content-between">
+                                How to redeem rewards? <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                        <div class="faq-item">
+                            <a href="#" class="text-decoration-none text-dark small d-flex justify-content-between">
+                                Forgotten my loyalty PIN <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                        <div class="faq-item">
+                            <a href="#" class="text-decoration-none text-dark small d-flex justify-content-between">
+                                Mall opening hours <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3">
+                                <i class="bi bi-chat-dots-fill text-primary"></i>
+                                <div>
+                                    <p class="mb-0 fw-bold small">Live Chat</p>
+                                    <p class="mb-0 text-muted" style="font-size: 0.7rem;">Available 10am - 10pm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple submission mock
+        document.getElementById('complaintForm').onsubmit = function (e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert("Thank you! Your complaint has been registered. Ticket ID: #TKT-" + Math.floor(1000 + Math.random() * 9000));
+                btn.innerText = originalText;
+                btn.disabled = false;
+                e.target.reset();
+            }, 1500);
+        };
+    </script>
+    <script src="customersupport.js"></script>
+</body>
+
+</html>

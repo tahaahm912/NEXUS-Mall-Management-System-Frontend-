@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Mall Management System</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <!-- ENTRY SCREEN -->
+    <div id="entry-screen">
+        <div class="icon-container">
+            <i data-lucide="store" class="floating-icon"
+                style="top: 20%; left: 15%; width: 48px; height: 48px; animation-delay: 0s;"></i>
+            <i data-lucide="shopping-bag" class="floating-icon"
+                style="top: 15%; right: 20%; width: 40px; height: 40px; animation-delay: 1s;"></i>
+            <i data-lucide="building-2" class="floating-icon"
+                style="bottom: 25%; left: 20%; width: 56px; height: 56px; animation-delay: 0.5s;"></i>
+            <i data-lucide="users" class="floating-icon"
+                style="bottom: 20%; right: 15%; width: 44px; height: 44px; animation-delay: 1.5s;"></i>
+            <i data-lucide="credit-card" class="floating-icon"
+                style="top: 50%; left: 10%; width: 32px; height: 32px; animation-delay: 2s;"></i>
+        </div>
+        <img src="Adobe Express - file.ico" style="width: 200px; height: 200px; margin-bottom: 10px;"
+            class="welcome-text" alt="">
+        <h1 class="welcome-text">Welcome to Nexus Mall Management</h1>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">NexusMMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="adminlog.html">Admin</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="ownerlog.html">Owner</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="employeelog.html">Employee</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="customerlog.html">Customer</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="contactus.html">Contact Us</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="theme-toggle" class="btn border-0 me-3">
+                        <i data-lucide="moon" id="theme-icon"></i>
+                    </button>
+                    <a href="mainlogin.html" class="btn-login">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Mall01.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Mall02.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="PhotoshopExtension_Image (2).png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="hero-glass-container">
+                <h1 class="fw-bold">Elevate Your Commercial Hub.</h1>
+                <p class="mb-4">The specialized platform for tracking metrics, managing vendors, and optimizing customer
+                    engagement.</p>
+                <a href="mainlogin.html" class="btn-login" style="padding: 1.2rem 3rem;">Get Started</a>
+            </div>
+            </div>
+        </section>
+
+        <!-- INTRO SECTION -->
+        <section class="intro-container">
+            <div class="intro-card">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold" style="color: var(--color-blue); font-size: 2.8rem;">What is NexusMMS?</h2>
+                    <p class="text-muted mx-auto mt-3" style="max-width: 650px;">A comprehensive ecosystem designed to
+                        bridge the gap between mall operations, store owners, and the modern shopper.</p>
+                </div>
+
+                <div class="row g-4 mt-2">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="role-card">
+                            <div class="role-icon"><i data-lucide="shield-check" style="width: 52px; height: 52px;"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Admin</h4>
+                            <p class="small text-muted">Manage system security, user permissions, and configurations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="role-card">
+                            <div class="role-icon"><i data-lucide="bar-chart-3" style="width: 52px; height: 52px;"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Owner</h4>
+                            <p class="small text-muted">Track revenue, manage leases, and view analytics.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="role-card">
+                            <div class="role-icon"><i data-lucide="user-cog" style="width: 52px; height: 52px;"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Employee</h4>
+                            <p class="small text-muted">Coordinate daily operations and handle requests.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="role-card">
+                            <div class="role-icon"><i data-lucide="smile" style="width: 52px; height: 52px;"></i></div>
+                            <h4 class="fw-bold mb-3">Customer</h4>
+                            <p class="small text-muted">Interactive maps, personalized offers, and loyalty rewards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container px-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                </div>
+                <div class="col-xs-6 col-md-3 ms-auto px-4">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="">Contribute</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-8 col-sm-6">
+                    <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                </div>
+                <div class="col-md-4 col-sm-6 text-end px-4">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="home.js">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="ownerstaff.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+            <label for="sidebar-toggle" class="d-lg-none cursor-pointer">
+                <i class="bi bi-x-lg fs-4"></i>
+            </label>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="ownerdash1.html" class="menu-item"><i class="bi bi-house-door-fill"></i> Owner Dashboard</a>
+            </li>
+            <li><a href="ownerstaff.html" class="menu-item active"><i class="bi bi-person-workspace"></i> Staff
+                    Management</a></li>
+            <li><a href="ownerjob.html" class="menu-item"><i class="bi bi-briefcase-fill"></i> Jobs</a></li>
+            <li><a href="ownerbusiness.html" class="menu-item"><i class="bi bi-graph-up-arrow"></i> Business
+                    Analytics</a></li>
+            <li><a href="ownerinventory.html" class="menu-item"><i class="bi bi-boxes"></i> Inventory</a></li>
+            <li><a href="ownerinbox.html" class="menu-item"><i class="bi bi-envelope-paper-fill"></i> Inbox</a></li>
+            <li><a href="ownerpass.html" class="menu-item"><i class="bi bi-shield-lock-fill"></i> Change Password</a>
+            </li>
+        </ul>
+
+        <!-- Sidebar User - Now forced to bottom and styled for visibility -->
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center text-white shadow-sm"
+                    style="width: 44px; height: 44px; background: linear-gradient(135deg, #FF99CC, #977DFF) !important; flex-shrink: 0;">
+                    <i class="bi bi-person-fill fs-5"></i>
+                </div>
+                <div style="overflow: hidden;">
+                    <p class="mb-0 fw-bold text-dark"
+                        style="font-size: 0.95rem; white-space: nowrap; text-overflow: ellipsis;">The General Store</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.8rem; white-space: nowrap; text-overflow: ellipsis;">
+                        taha@generalstore.com</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <label for="sidebar-toggle" class="btn d-lg-none me-3 p-0 border-0">
+                <i class="bi bi-list fs-2"></i>
+            </label>
+            <span class="text-muted fw-semibold d-none d-sm-inline">Merchant Hub / Staff Management</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+
+            <div class="vr mx-1 text-muted opacity-25 d-none d-sm-block"></div>
+            <div class="d-flex align-items-center gap-3">
+                <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                    title="Toggle Dark Mode">
+                    <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+                </button>
+                <a href="mainlogin.html"><button id="logoutBtn"
+                        class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                        Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                    </button></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <main class="content-area">
+
+            <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+                <div>
+                    <h2 class="fw-800 mb-1">Employee Oversight</h2>
+                    <p class="text-muted mb-0">Manage roles, attendance, and payroll for <strong>The General
+                            Store</strong>.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary fw-bold px-3 shadow-sm border-0"
+                        style="background: var(--color-blue);">
+                        <i class="bi bi-person-plus me-2"></i> Add New Staff
+                    </button>
+                </div>
+            </div>
+
+            <!-- Staff Directory Table -->
+            <div class="staff-table-card">
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Current Role</th>
+                                <th>Today's Attendance</th>
+                                <th>Last Paid</th>
+                                <th>Status</th>
+                                <th class="text-end">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="avatar-circle" style="background: #eef2ff;">G</div>
+                                        <div>
+                                            <p class="mb-0 fw-bold">George Bennett</p>
+                                            <p class="small text-muted mb-0">Joined: Jan 2023</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-light text-dark border fw-semibold">Head Clerk</span></td>
+                                <td><span class="status-badge status-present">08:55 AM (On Time)</span></td>
+                                <td>Dec 01, 2024</td>
+                                <td><span class="badge rounded-pill bg-success">Active</span></td>
+                                <td class="text-end">
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button class="btn-action" title="Pay Employee"><i
+                                                class="bi bi-currency-dollar"></i></button>
+                                        <button class="btn-action" title="Promote"><i
+                                                class="bi bi-arrow-up-circle"></i></button>
+                                        <button class="btn-action" title="View Details"><i
+                                                class="bi bi-eye"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="avatar-circle" style="background: #fff1f2;">M</div>
+                                        <div>
+                                            <p class="mb-0 fw-bold">Margaret Thompson</p>
+                                            <p class="small text-muted mb-0">Joined: Mar 2023</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-light text-dark border fw-semibold">Inventory Manager</span>
+                                </td>
+                                <td><span class="status-badge status-late">09:15 AM (Late)</span></td>
+                                <td>Dec 01, 2024</td>
+                                <td><span class="badge rounded-pill bg-success">Active</span></td>
+                                <td class="text-end">
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button class="btn-action" title="Pay Employee"><i
+                                                class="bi bi-currency-dollar"></i></button>
+                                        <button class="btn-action" title="Promote"><i
+                                                class="bi bi-arrow-up-circle"></i></button>
+                                        <button class="btn-action" title="View Details"><i
+                                                class="bi bi-eye"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Management Insight Cards -->
+            <div class="row mt-4 g-4">
+                <div class="col-md-6">
+                    <div class="card border-0 rounded-4 shadow-sm p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="fw-bold mb-0">Payroll Status</h5>
+                            <span class="text-primary fw-bold">$12,400.00 Total Mo.</span>
+                        </div>
+                        <div class="progress mb-3" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar"
+                                style="width: 85%; background: var(--color-blue);" aria-valuenow="85" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                        <p class="small text-muted">85% of staff have been paid for the current cycle.</p>
+                        <button class="btn btn-outline-primary w-100 fw-bold mt-2">Bulk Pay Employees</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 rounded-4 shadow-sm p-4 h-100">
+                        <h5 class="fw-bold mb-3">Upcoming Reviews</h5>
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <div class="bg-info-subtle text-info px-2 py-1 rounded small fw-bold">12 Dec</div>
+                            <p class="mb-0 fw-semibold">Harold Miller (Annual Performance)</p>
+                        </div>
+                        <button class="btn btn-light w-100 fw-bold mt-auto">Schedule Review</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="customModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header" id="modalHeader">
+                <h5 class="mb-0" id="modalTitle">Add New Staff</h5>
+                <button class="btn-close btn-close-white" onclick="closeModal()"></button>
+            </div>
+            <div class="modal-body">
+                <div id="addStaffFields">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" id="staffName" class="form-control" placeholder="e.g. John Doe">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Position / Role</label>
+                        <input type="text" id="staffRole" class="form-control" placeholder="e.g. Store Manager">
+                    </div>
+                </div>
+                <div id="scheduleFields" style="display: none;">
+                    <div class="mb-3">
+                        <label class="form-label">Review Date</label>
+                        <input type="date" id="reviewDate" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-light border fw-bold" onclick="closeModal()">Cancel</button>
+                <button class="btn btn-primary fw-bold" id="modalSubmitBtn">Confirm Action</button>
+            </div>
+        </div>
+    </div>
+    <script src="ownerstaff.js"></script>
+</body>
+
+</html>

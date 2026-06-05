@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Management | NexusMMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+    <link rel="stylesheet" href="adminevent.css">
+</head>
+
+<body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+            <button class="btn btn-link text-white d-lg-none p-0" type="button" id="closeSidebar">
+                <i class="bi bi-x-lg fs-4"></i>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="admindash1.html" class="menu-item"><i class="bi bi-grid-fill"></i> Admin Dashboard</a></li>
+            <li><a href="adminmanagement.html" class="menu-item"><i class="bi bi-people-fill"></i> Admin Management</a>
+            </li>
+            <li><a href="shopmanagement.html" class="menu-item"><i class="bi bi-shop"></i> Shops</a></li>
+            <li><a href="adminrent.html" class="menu-item"><i class="bi bi-cash-stack"></i> Rent and Revenue</a></li>
+            <li><a href="adminevent.html" class="menu-item active"><i class="bi bi-calendar-event"></i> Events</a></li>
+            <li><a href="adminnoti.html" class="menu-item"><i class="bi bi-bell-fill"></i> Notifications</a></li>
+        </ul>
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white"
+                    style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--color-purple), var(--color-blue)) !important;">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                <div>
+                    <p class="mb-0 fw-bold" style="font-size: 0.9rem; color: var(--footer-dark);">Master Admin</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.75rem;">admin@nexusmms.com</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <button class="btn d-lg-none me-2 p-0 border-0" id="sidebarToggle">
+                <i class="bi bi-list fs-2"></i>
+            </button>
+            <span class="text-muted fw-semibold d-none d-sm-inline">Management / Events</span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                title="Toggle Dark Mode">
+                <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+            </button>
+            <a href="mainlogin.html"><button id="logoutBtn"
+                    class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                    Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                </button></a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <main class="content-area">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <div class="stat-card event-gradient d-flex flex-column justify-content-between">
+                        <div>
+                            <p class="mb-1 opacity-75 fw-600">Upcoming Events</p>
+                            <h2 class="fw-800 mb-0" id="statUpcoming">0</h2>
+                        </div>
+                        <div class="mt-4 pt-3 border-top border-white border-opacity-25 d-flex justify-content-between">
+                            <span class="small opacity-75">Next 30 Days</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="stat-card shadow-sm border-0">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 bg-light rounded-4 text-primary fs-4"><i class="bi bi-people"></i></div>
+                            <div>
+                                <p class="mb-0 text-muted small fw-600">Total Bookings</p>
+                                <h3 class="fw-800 mb-0">840</h3>
+                            </div>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" style="width: 65%; background: var(--color-purple);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="stat-card shadow-sm border-0 d-flex flex-column justify-content-center">
+                        <h6 class="fw-bold mb-3">Event Quick Filter</h6>
+                        <div class="row g-2">
+                            <div class="col-8">
+                                <select class="form-select form-select-sm bg-light border-0" id="filterLocation">
+                                    <option value="All">All Locations</option>
+                                    <option>Main Atrium</option>
+                                    <option>Outdoor Plaza</option>
+                                    <option>Conference Hall</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <button type="button" class="btn btn-sm btn-primary w-100"
+                                    style="background: var(--color-blue);" onclick="renderEvents()">Filter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="nav nav-pills nav-pills-custom mb-4" id="eventTabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="view-events-tab" data-bs-toggle="pill"
+                        data-bs-target="#viewEvents" type="button">View All Events</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="create-event-tab" data-bs-toggle="pill" data-bs-target="#createEvent"
+                        type="button">Create New Event</button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="viewEvents">
+                    <div class="table-custom shadow-sm">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Event Name</th>
+                                    <th>Location</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                    <th class="text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="eventTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="createEvent">
+                    <div class="stat-card border-0 shadow-sm p-4">
+                        <h5 class="fw-bold mb-4">Event Details</h5>
+                        <form class="row g-3" id="addEventForm">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Event Title</label>
+                                <input type="text" id="titleInput" class="form-control bg-light border-0"
+                                    placeholder="e.g. Annual Fashion Show" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Location / Venue</label>
+                                <select id="locationInput" class="form-select bg-light border-0">
+                                    <option>Main Atrium</option>
+                                    <option>Outdoor Plaza</option>
+                                    <option>Conference Hall</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label small fw-bold">Start Date</label>
+                                <input type="date" id="dateInput" class="form-control bg-light border-0" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label small fw-bold">Start Time</label>
+                                <input type="time" id="timeInput" class="form-control bg-light border-0" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label small fw-bold">Event Description</label>
+                                <textarea id="descInput" class="form-control bg-light border-0" rows="3"></textarea>
+                            </div>
+                            <div class="col-12 mt-4 text-end">
+                                <button type="reset" class="btn btn-light px-4 me-2">Clear</button>
+                                <button type="submit" class="btn btn-primary px-5"
+                                    style="background: var(--color-blue);">Publish Event</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="adminevent.js">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="admindash1.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <!-- Hidden toggle for CSS-only sidebar -->
+    <input type="checkbox" id="sidebar-toggle">
+    <!-- Clickable overlay to close sidebar on mobile -->
+    <label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+            <!-- Close button for mobile -->
+            <label for="sidebar-toggle" class="d-lg-none cursor-pointer">
+                <i class="bi bi-x-lg fs-4"></i>
+            </label>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="admindash1.html" class="menu-item active"><i class="bi bi-grid-fill"></i> Admin Dashboard</a>
+            </li>
+            <li><a href="adminmanagement.html" class="menu-item"><i class="bi bi-people-fill"></i> Admin Management</a>
+            </li>
+            <li><a href="shopmanagement.html" class="menu-item"><i class="bi bi-shop"></i> Shops</a></li>
+            <li><a href="adminrent.html" class="menu-item"><i class="bi bi-cash-stack"></i> Rent and Revenue</a></li>
+            <li><a href="adminevent.html" class="menu-item"><i class="bi bi-calendar-event"></i> Events</a></li>
+            <li><a href="adminnoti.html" class="menu-item"><i class="bi bi-bell-fill"></i> Notifications</a></li>
+        </ul>
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white shadow-sm"
+                    style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--color-purple), var(--color-blue)) !important;">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                <div>
+                    <p class="mb-0 fw-bold" style="font-size: 0.9rem; color: var(--footer-dark);">Master Admin</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.75rem;">admin@nexusmms.com</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <label for="sidebar-toggle" class="btn d-lg-none me-3 p-0 border-0">
+                <i class="bi bi-list fs-2"></i>
+            </label>
+            <span class="text-muted fw-semibold d-none d-sm-inline">Overview / Dashboard</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+            <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                title="Toggle Dark Mode">
+                <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+            </button>
+
+            <a href="mainlogin.html">
+                <button class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                    Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+        <main class="content-area">
+
+            <!-- Welcome Section -->
+            <div class="welcome-card">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="fw-800">Welcome back, Admin! 👋</h1>
+                        <p class="text-secondary mb-0">Manage your mall operations, approve shop requests, and monitor
+                            revenue in real-time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Stats Grid -->
+            <div class="row g-4">
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(0, 51, 255, 0.1); color: var(--color-blue);">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h6 class="text-muted mb-1">Total Shops</h6>
+                        <h3 class="fw-bold mb-0">128</h3>
+                        <small class="text-success fw-bold"><i class="bi bi-arrow-up"></i> 12% increase</small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card">
+                        <div class="stat-icon"
+                            style="background: rgba(151, 125, 255, 0.1); color: var(--color-purple);">
+                            <i class="bi bi-wallet2"></i>
+                        </div>
+                        <h6 class="text-muted mb-1">Monthly Revenue</h6>
+                        <h3 class="fw-bold mb-0">$42,500</h3>
+                        <small class="text-primary fw-bold">Target: $50k</small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(255, 204, 242, 0.5); color: #d63384;">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h6 class="text-muted mb-1">Daily Footfall</h6>
+                        <h3 class="fw-bold mb-0">3,420</h3>
+                        <small class="text-muted">Peak time: 6:00 PM</small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(25, 135, 84, 0.1); color: #198754;">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                        <h6 class="text-muted mb-1">Rent Collected</h6>
+                        <h3 class="fw-bold mb-0">88%</h3>
+                        <small class="text-success fw-bold">12 shops pending</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="row mt-4 g-4">
+                <div class="col-lg-8">
+                    <div class="card border-0 rounded-4 shadow-sm p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="fw-bold mb-0" id="openmodel">Mall Status Map</h5>
+                            <button class="btn btn-sm btn-outline-secondary">View Detail</button>
+                            <div class="model" id="model">
+                                <div class="model-inner">
+                                    <img src="Gemini_Generated_Image_o6qo17o6qo17o6qo.png" alt="">
+                                    <button type="button" class="btn-close" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="text-center py-10 bg-light rounded-4 border border-dashed flex-grow-1 d-flex flex-column justify-content-center map">
+                            <img src="Gemini_Generated_Image_o6qo17o6qo17o6qo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0 rounded-4 shadow-sm p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="fw-bold mb-0">Quick Alerts</h5>
+                            <button id="clear-alerts" class="btn btn-sm text-muted p-0">Clear All</button>
+                        </div>
+
+                        <div id="alert-list">
+                            <div class="alert-item d-flex gap-3 mb-3 pb-3 border-bottom" data-id="1">
+                                <div class="bg-warning-subtle text-warning p-2 rounded-3 h-100">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1 fw-bold">Late Payment</h6>
+                                    <p class="small text-muted mb-0">Shop #204 - Starbucks overdue for 3 days.</p>
+                                </div>
+                                <button class="btn-close small dismiss-alert" style="font-size: 0.7rem;"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="admindash1.js"></script>
+</body>
+
+</html>

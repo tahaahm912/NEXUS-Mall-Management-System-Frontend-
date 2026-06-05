@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="adminlog.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg custom-header sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">NexusMMS</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="theme-toggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="auth-wrapper">
+        <div class="container-auth" id="container">
+            <!-- Sign Up Form -->
+            <div class="form-container sign-up">
+                <form id="signupForm">
+                    <h1>Create Admin</h1>
+                    <p>Register as a mall administrator to start managing tenants and facilities.</p>
+                    <input type="text" id="s1" placeholder="Full Name">
+                    <input type="text" id="s2" placeholder="Username">
+                    <input type="password" id="s3" placeholder="Admin Password">
+                    <input type="password" id="s4" placeholder="Confirm Password">
+                    <button type="submit">Sign Up</button>
+                    <span class="mobile-toggle" onclick="toggleAuth()">Already have an account? Sign In</span>
+                </form>
+            </div>
+
+            <!-- Sign In Form -->
+            <div class="form-container sign-in">
+                <form id="loginForm">
+                    <h1>Admin Sign In</h1>
+                    <p>Welcome back! Please login to your administrative dashboard.</p>
+                    <input type="text" id="l1" placeholder="Username">
+                    <input type="password" id="l2" placeholder="Password">
+                    <button type="submit">Sign In</button>
+                    <span class="mobile-toggle" onclick="toggleAuth()">Don't have an account? Sign Up</span>
+                </form>
+            </div>
+
+            <!-- Toggle Overlay Panels -->
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Manage Ecosystem</h1>
+                        <p>Already an administrator? Sign in to resume control of mall operations.</p>
+                        <button class="hidden" id="login">Sign In</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Join NexusMMS</h1>
+                        <p>Register as a new administrator to build and oversee your digital mall workspace.</p>
+                        <button class="hidden" id="register">Register Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container px-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                </div>
+                <div class="col-xs-6 col-md-3 ms-auto px-4">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="">Contribute</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-8 col-sm-6">
+                    <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                </div>
+                <div class="col-md-4 col-sm-6 text-end px-4">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="adminlog.js">
+    </script>
+</body>
+
+</html>

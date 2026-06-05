@@ -1,0 +1,536 @@
+:root {
+  --color-pink: #ffccf2;
+  --color-purple: #977dff;
+  --color-blue: #0033ff;
+  --sidebar-width: 280px;
+  --footer-dark: #0f172a;
+  --bg-light: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* --- FULL DARK THEME OVERRIDES --- */
+[data-theme="dark"] {
+  --bg-light: #0f172a;
+  --sidebar-bg: #1e293b;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --bg-gradient: linear-gradient(135deg, #4a1b2e 0%, #2e1f4f 50%, #10243f 100%);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-light);
+  color: var(--text-main);
+}
+
+/* Fix Sidebar User Profile Background */
+[data-theme="dark"] .sidebar-user {
+  background: #1a2236 !important;
+}
+[data-theme="dark"] .sidebar-user .bg-primary {
+  background: var(--bg-gradient) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Fix Search Container & Inputs */
+[data-theme="dark"] .search-container {
+  background: #1e293b !important;
+}
+[data-theme="dark"] .input-group-text {
+  background-color: #0f172a !important;
+  border-color: var(--border-color) !important;
+  color: #fff !important;
+}
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  background-color: #0f172a !important;
+  color: #fff !important;
+  border-color: var(--border-color) !important;
+}
+/* Ensure typed text is visible (White/Off-white) */
+[data-theme="dark"] .form-control {
+  color: #ffffff !important;
+}
+
+/* Ensure the 'hint' text is visible but slightly muted */
+[data-theme="dark"] .form-control::placeholder {
+  color: #94a3b8 !important; /* Matches your --text-muted variable */
+  opacity: 1; /* Necessary for Firefox */
+}
+
+/* If you have a search icon inside an input-group-text */
+[data-theme="dark"] .input-group-text i {
+  color: #94a3b8 !important;
+}
+
+/* Optional: Add a subtle glow when the search bar is clicked in dark mode */
+[data-theme="dark"] .form-control:focus {
+  background-color: #0f172a !important;
+  box-shadow: 0 0 0 3px rgba(151, 125, 255, 0.2);
+  border-color: var(--color-purple) !important;
+}
+
+/* Fix Job Icons (Company Logo Placeholders) */
+[data-theme="dark"] .company-logo-placeholder {
+  background: #0f172a !important;
+  border: 1px solid var(--border-color);
+}
+
+/* Fix Visibility for Taha Ahmed & Headings */
+[data-theme="dark"] .sidebar-user p.fw-bold,
+[data-theme="dark"] .top-bar span.text-muted,
+[data-theme="dark"] .fw-800,
+[data-theme="dark"] .job-card h5 {
+  color: #ffffff !important;
+}
+/* Add to your :root */
+:root {
+  --bg-gradient: linear-gradient(
+    135deg,
+    var(--color-pink) 0%,
+    var(--color-purple) 50%,
+    var(--color-blue) 100%
+  );
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- DARK THEME DEFINITION --- */
+[data-theme="dark"] {
+  --bg-light: #0f172a;
+  --sidebar-bg: #1e293b;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --bg-gradient: linear-gradient(135deg, #4a1b2e 0%, #2e1f4f 50%, #10243f 100%);
+  --footer-dark: #ffffff;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-light);
+  color: var(--text-main);
+}
+[data-theme="dark"] .sidebar,
+[data-theme="dark"] .top-bar,
+[data-theme="dark"] .search-container,
+[data-theme="dark"] .job-card {
+  background-color: var(--sidebar-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .sidebar-header {
+  background: var(--bg-gradient) !important;
+}
+
+/* Text Visibility in Dark Mode */
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .sidebar-user p.text-muted {
+  color: var(--text-muted) !important;
+}
+[data-theme="dark"] .fw-800,
+[data-theme="dark"] .sidebar-user p.fw-bold,
+[data-theme="dark"] .top-bar span.text-muted,
+[data-theme="dark"] .job-card h5,
+[data-theme="dark"] .salary-tag {
+  color: #ffffff !important;
+}
+
+/* Styled Popup Alert */
+.custom-alert {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--bg-gradient);
+  color: white;
+  padding: 1.2rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.custom-alert.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* --- SIDEBAR TOGGLE --- */
+#sidebar-toggle {
+  display: none;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-pink) 0%,
+    var(--color-purple) 50%,
+    var(--color-blue) 100%
+  );
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h2 {
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 1.5rem 0;
+  flex: 1;
+}
+
+.menu-item {
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin: 4px 12px;
+  border-radius: 12px;
+}
+
+.menu-item i {
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background: rgba(151, 125, 255, 0.1);
+  color: var(--color-blue);
+}
+
+.menu-item.active {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 204, 242, 0.2) 0%,
+    rgba(151, 125, 255, 0.2) 100%
+  );
+  color: var(--color-blue);
+}
+
+.sidebar-user {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: #fdfdfd;
+}
+
+/* --- TOP BAR --- */
+.top-bar {
+  height: 70px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: var(--sidebar-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  transition: left 0.3s ease;
+}
+
+/* --- MAIN CONTENT --- */
+.main-wrapper {
+  margin-left: var(--sidebar-width);
+  padding-top: 70px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+}
+
+.content-area {
+  padding: 2.5rem;
+  flex: 1;
+}
+
+/* --- JOB SPECIFIC STYLES --- */
+.search-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  margin-bottom: 2.5rem;
+}
+
+.job-card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+}
+
+.job-card:hover {
+  border-color: var(--color-purple);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(151, 125, 255, 0.1);
+}
+
+.company-logo-placeholder {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-blue);
+  margin-bottom: 1.2rem;
+}
+
+.job-badge {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-fulltime {
+  background: rgba(0, 51, 255, 0.1);
+  color: var(--color-blue);
+}
+.badge-parttime {
+  background: rgba(151, 125, 255, 0.1);
+  color: var(--color-purple);
+}
+.badge-seasonal {
+  background: rgba(25, 135, 84, 0.1);
+  color: #198754;
+}
+
+.salary-tag {
+  font-weight: 700;
+  color: var(--footer-dark);
+  font-size: 1.1rem;
+}
+
+/* --- FOOTER --- */
+.site-footer {
+  background-color: #0f172a;
+  padding: 40px 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
+}
+.site-footer hr {
+  border-top-color: #bbb;
+  opacity: 0.5;
+}
+.site-footer hr.small {
+  margin: 20px 0;
+}
+.site-footer h6 {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+  /* Force right alignment */
+  text-align: right !important;
+  width: 100%;
+  display: block;
+}
+.site-footer a {
+  color: #737373;
+}
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+.footer-links {
+  padding-left: 0;
+  padding-right: 0; /* Remove default right padding */
+  list-style: none;
+  /* Force right alignment */
+  text-align: right !important;
+}
+.footer-links li {
+  display: block;
+  width: 100%;
+}
+.footer-links a {
+  color: #737373;
+}
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+.footer-links.inline li {
+  display: inline-block;
+}
+.site-footer .social-icons {
+  text-align: right;
+}
+.site-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 0;
+  border-radius: 100%;
+  background-color: #33353d;
+}
+.copyright-text {
+  margin: 0;
+}
+@media (max-width: 991px) {
+  .site-footer [class^="col-"] {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: 0;
+  }
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center;
+  }
+}
+.social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.social-icons li.title {
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: #96a2b2;
+  font-weight: 700;
+  font-size: 13px;
+}
+.social-icons a {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: #fff;
+  background-color: #29aafe;
+}
+.social-icons.size-sm a {
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  font-size: 14px;
+}
+.social-icons a.facebook:hover {
+  background-color: #3b5998;
+}
+.social-icons a.twitter:hover {
+  background-color: #00aced;
+}
+.social-icons a.linkedin:hover {
+  background-color: #007bb6;
+}
+.social-icons a.dribbble:hover {
+  background-color: #ea4c89;
+}
+@media (max-width: 767px) {
+  .social-icons li.title {
+    display: block;
+    margin-right: 0;
+    font-weight: 600;
+  }
+}
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .top-bar,
+  .main-wrapper {
+    left: 0;
+    margin-left: 0;
+  }
+  #sidebar-toggle:checked ~ .sidebar {
+    transform: translateX(0);
+  }
+  #sidebar-toggle:checked ~ .sidebar-overlay {
+    display: block;
+  }
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1045;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

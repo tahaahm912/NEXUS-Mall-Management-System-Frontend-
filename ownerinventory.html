@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory & Shop | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="ownerinventory.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+            <label for="sidebar-toggle" class="d-lg-none cursor-pointer"><i class="bi bi-x-lg fs-4"></i></label>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="ownerdash1.html" class="menu-item"><i class="bi bi-house-door-fill"></i> Owner Dashboard</a>
+            </li>
+            <li><a href="ownerstaff.html" class="menu-item"><i class="bi bi-person-workspace"></i> Staff Management</a>
+            </li>
+            <li><a href="ownerjob.html" class="menu-item"><i class="bi bi-briefcase-fill"></i> Jobs</a></li>
+            <li><a href="ownerbusiness.html" class="menu-item"><i class="bi bi-graph-up-arrow"></i> Business
+                    Analytics</a></li>
+            <li><a href="ownerinventory.html" class="menu-item active"><i class="bi bi-boxes"></i> Inventory</a></li>
+            <li><a href="ownerinbox.html" class="menu-item"><i class="bi bi-envelope-paper-fill"></i> Inbox</a></li>
+            <li><a href="ownerpass.html" class="menu-item"><i class="bi bi-shield-lock-fill"></i> Change Password</a>
+            </li>
+        </ul>
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center text-white shadow-sm"
+                    style="width: 44px; height: 44px; background: linear-gradient(135deg, #FF99CC, #977DFF) !important; flex-shrink: 0;">
+                    <i class="bi bi-person-fill fs-5"></i>
+                </div>
+                <div>
+                    <p class="mb-0 fw-bold text-dark" style="font-size: 0.95rem;">The General Store</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.8rem;">taha@generalstore.com</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <label for="sidebar-toggle" class="btn d-lg-none me-3 p-0 border-0"><i class="bi bi-list fs-2"></i></label>
+            <span class="text-muted fw-semibold d-none d-sm-inline">Merchant Hub / Inventory & Shop</span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+
+            <div class="d-flex align-items-center gap-3">
+                <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                    title="Toggle Dark Mode">
+                    <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+                </button>
+                <a href="mainlogin.html"><button id="logoutBtn"
+                        class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                        Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                    </button></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <main class="content-area">
+
+            <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+                <div>
+                    <h2 class="fw-800 mb-1">Catalog</h2>
+                    <p class="text-muted mb-0">Manage your product stock.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary fw-bold px-3 shadow-sm border-0"
+                        style="background: var(--color-blue);" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                        <i class="bi bi-plus-circle me-2"></i> Add New Product
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <ul class="nav nav-tabs nav-tabs-custom" id="inventoryTabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="stock-tab" data-bs-toggle="tab" data-bs-target="#stock"
+                        type="button">Inventory Stock</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="inventoryTabsContent">
+
+                <!-- Tab 1: Inventory Management -->
+                <div class="tab-pane fade show active" id="stock" role="tabpanel">
+                    <div class="inventory-card">
+                        <div
+                            class="p-3 border-bottom d-flex justify-content-between align-items-center flex-wrap gap-2">
+                            <div class="input-group" style="max-width: 300px;">
+                                <span class="input-group-text bg-white border-end-0 text-muted"><i
+                                        class="bi bi-search"></i></span>
+                                <input type="text" class="form-control border-start-0" placeholder="Search products...">
+                            </div>
+                            <div class="d-flex gap-2">
+                                <select class="form-select form-select-sm" style="width: auto;">
+                                    <option>All Categories</option>
+                                    <option>Groceries</option>
+                                    <option>Dry Goods</option>
+                                    <option>Tobacco</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table mb-0 align-middle">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th class="ps-4">Product Name</th>
+                                        <th>SKU</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Status</th>
+                                        <th class="text-end pe-4">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-4 fw-bold">Premium Canned Peaches</td>
+                                        <td class="text-muted">#CP-9901</td>
+                                        <td>Groceries</td>
+                                        <td>$2.45</td>
+                                        <td>42 units</td>
+                                        <td><span class="stock-indicator stock-good"></span> Healthy</td>
+                                        <td class="text-end pe-4">
+                                            <button class="btn btn-sm btn-outline-danger border-0">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4 fw-bold">Aged Kentucky Bourbon</td>
+                                        <td class="text-muted">#ALC-4421</td>
+                                        <td>Dry Goods</td>
+                                        <td>$18.00</td>
+                                        <td>5 units</td>
+                                        <td><span class="stock-indicator stock-low"></span> Low Stock</td>
+                                        <td class="text-end pe-4">
+                                            <button class="btn btn-sm btn-outline-danger border-0">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4 fw-bold">Handmade Wool Blankets</td>
+                                        <td class="text-muted">#TEX-2200</td>
+                                        <td>Hardware</td>
+                                        <td>$12.50</td>
+                                        <td>15 units</td>
+                                        <td><span class="stock-indicator stock-mid"></span> Warning</td>
+                                        <td class="text-end pe-4">
+                                            <button class="btn btn-sm btn-outline-danger border-0">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
+        <div class="modal fade" id="addProductModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg rounded-4">
+                    <div class="modal-header border-bottom-0 pb-0">
+                        <h5 class="fw-bold px-2 pt-2">Add New Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form id="addProductForm">
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Product Name</label>
+                                <input type="text" id="p-name" class="form-control" required
+                                    placeholder="e.g. Fine Coffee">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label small fw-bold">Category</label>
+                                    <select id="p-cat" class="form-select">
+                                        <option>Groceries</option>
+                                        <option>Dry Goods</option>
+                                        <option>Hardware</option>
+                                        <option>Tobacco</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label small fw-bold">SKU</label>
+                                    <input type="text" id="p-sku" class="form-control" required placeholder="#SKU-123">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label small fw-bold">Price ($)</label>
+                                    <input type="number" id="p-price" step="0.01" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label small fw-bold">Quantity</label>
+                                    <input type="number" id="p-qty" class="form-control" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 fw-bold py-2 mt-2"
+                                style="background: var(--color-blue); border: none;">
+                                Save Product
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="ownerinventory.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

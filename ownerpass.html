@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password | NexusMMS</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="ownerpass.css">
+    <link rel="icon" type="image/x-icon" href="Adobe Express - file.ico">
+</head>
+
+<body>
+
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>NexusMMS</h2>
+            <label for="sidebar-toggle" class="d-lg-none cursor-pointer"><i class="bi bi-x-lg fs-4"></i></label>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="ownerdash1.html" class="menu-item"><i class="bi bi-house-door-fill"></i> Owner Dashboard</a>
+            </li>
+            <li><a href="ownerstaff.html" class="menu-item"><i class="bi bi-person-workspace"></i> Staff Management</a>
+            </li>
+            <li><a href="ownerjob.html" class="menu-item"><i class="bi bi-briefcase-fill"></i> Jobs</a></li>
+            <li><a href="ownerbusiness.html" class="menu-item"><i class="bi bi-graph-up-arrow"></i> Business
+                    Analytics</a></li>
+            <li><a href="ownerinventory.html" class="menu-item"><i class="bi bi-boxes"></i> Inventory</a></li>
+            <li><a href="ownerinbox.html" class="menu-item"><i class="bi bi-envelope-paper-fill"></i> Inbox</a></li>
+            <li><a href="ownerpass.html" class="menu-item active"><i class="bi bi-shield-lock-fill"></i> Change
+                    Password</a></li>
+        </ul>
+        <div class="sidebar-user">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center text-white shadow-sm"
+                    style="width: 44px; height: 44px; background: linear-gradient(135deg, #FF99CC, #977DFF) !important; flex-shrink: 0;">
+                    <i class="bi bi-person-fill fs-5"></i>
+                </div>
+                <div>
+                    <p class="mb-0 fw-bold text-dark" style="font-size: 0.95rem;">The General Store</p>
+                    <p class="mb-0 text-muted" style="font-size: 0.8rem;">taha@generalstore.com</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="d-flex align-items-center">
+            <label for="sidebar-toggle" class="btn d-lg-none me-3 p-0 border-0"><i class="bi bi-list fs-2"></i></label>
+            <span class="text-muted fw-semibold d-none d-sm-inline">Account Settings / Security</span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+
+            <div class="d-flex align-items-center gap-3">
+                <button id="dark-mode-toggle" class="btn btn-link text-muted p-0 border-0 shadow-none me-2"
+                    title="Toggle Dark Mode">
+                    <i class="bi bi-moon-stars-fill fs-5" id="theme-icon"></i>
+                </button>
+                <a href="mainlogin.html"><button id="logoutBtn"
+                        class="btn btn-outline-danger btn-sm border-0 fw-bold d-flex align-items-center">
+                        Logout <i class="bi bi-box-arrow-right ms-2"></i>
+                    </button></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <main class="content-area">
+
+            <div class="text-center mb-5">
+                <h2 class="fw-800 mb-1">Security & Access</h2>
+                <p class="text-muted mb-0">Protect your account by ensuring your login credentials are up to date.</p>
+            </div>
+
+            <div class="security-card">
+                <div class="security-header d-flex align-items-center gap-3">
+                    <div class="rounded-circle bg-primary-subtle d-flex align-items-center justify-content-center"
+                        style="width: 50px; height: 50px;">
+                        <i class="bi bi-lock-fill text-primary fs-4"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-0 fw-800">Change Your Password</h5>
+                        <p class="mb-0 text-muted small">Update the password used to access your NexusMMS account</p>
+                    </div>
+                </div>
+
+                <div class="security-body">
+                    <div class="security-tip">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-lightbulb-fill text-primary mt-1"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1">Pro Tip for Store Owners</h6>
+                                <p class="mb-0 small text-muted">A strong password should combine letters, numbers, and
+                                    symbols. Avoid using common store names or your own birthday.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="#" method="POST">
+                        <div class="row g-4">
+                            <!-- Current Password -->
+                            <div class="col-12">
+                                <label class="form-label">Current Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="bi bi-key"></i></span>
+                                    <input type="password" class="form-control" placeholder="Enter existing password">
+                                </div>
+                            </div>
+
+                            <!-- New Password -->
+                            <div class="col-md-6">
+                                <label class="form-label">New Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="bi bi-shield-plus"></i></span>
+                                    <input type="password" class="form-control" placeholder="Minimum 8 characters">
+                                </div>
+                            </div>
+
+                            <!-- Confirm New Password -->
+                            <div class="col-md-6">
+                                <label class="form-label">Confirm New Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="bi bi-check2-circle"></i></span>
+                                    <input type="password" class="form-control" placeholder="Re-type new password">
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-5">
+                                <hr class="my-4 opacity-50">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-muted small mb-0"><i class="bi bi-info-circle me-1"></i> You'll be
+                                        logged out of other devices after changing.</p>
+                                    <div class="d-flex gap-2">
+                                        <button type="reset"
+                                            class="btn btn-light fw-bold px-4 rounded-3 border">Cancel</button>
+                                        <button type="submit"
+                                            class="btn btn-primary fw-bold px-4 rounded-3 shadow-sm border-0"
+                                            style="background: var(--color-blue);">
+                                            Update Password
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container px-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h2 style="font-weight: bold; color: white;">NexusMMS</h2>
+                    </div>
+                    <div class="col-xs-6 col-md-3 ms-auto px-4">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="">Contribute</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <p class="copyright-text"> © 2025 NexusMMS Enterprise Suite. Security Monitored.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-end px-4">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="ownerpass.js"></script>
+</body>
+
+</html>
