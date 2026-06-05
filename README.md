@@ -48,7 +48,7 @@ Since this project consists of static front-end files, no complex server setup i
 
 1. **Clone the repository** (or extract the project archive):
    ```bash
-   git clone https://github.com/tahaahm912/NEXUS-Management-System-Frontend-
+   git clone https://github.com/tahaahm912/NEXUS-Management-System-Frontend-](https://github.com/tahaahm912/NEXUS-Mall-Management-System-Frontend-
    ```
 2. **Navigate to the project directory**:
    ```bash
